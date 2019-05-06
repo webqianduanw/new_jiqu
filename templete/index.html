@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>福利</title>
+</head>
+<style>
+    html, body, div, span, object, iframe,h1, h2,
+h3, h4, h5, h6, p, blockquote, pre,abbr, address, cite, code,del, dfn,
+em, img, ins,kbd, q, samp,small, strong, sub, sup, var,b, i,dl, dt, dd,
+ol, ul, li,fieldset, form, label, legend,table, caption, tbody,
+tfoot,thead,tr, th, td,article, aside, canvas, details, figcaption,
+figure, footer, header, hgroup, menu, nav, section, summary,time, mark,
+audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    outline-style:none;/*FF*/
+}
+    .title{
+        font-size: 0.48rem;
+        font-weight: bold;
+        color:#333;
+        padding-left:0.4rem;
+        margin-top:0.3rem ;
+    }
+    a{
+        margin: 0;
+        padding: 0;
+    }
+    .context{
+       width: 100%;
+       margin-top: 0.25rem;
+    }
+</style>
+<body>
+    <div class="page">
+
+        <p class="title">热门话题</p>
+
+      <img src="../img/list/1@2x.png" class="context" id="hot1">
+
+        <img src="../img/list/2@2x.png" class="context" id="hot2">
+      <img src="../img/list/3@2x.png" class="context" id="play1">
+
+      <img src="../img/list/4@2x.png" class="context" id="play2">
+
+       <img src="../img/list/5@2x.png" class="context" id="play3">
+
+    </div>
+</body>
+<script src="../js/rem.js"></script>
+<script src="../js/jquery-2.1.1.min.js"></script>
+<script src="../js/mui.min.js "></script>
+<script>
+    window.onload = function(){
+
+
+        mui('.page').on('tap', '#hot1', function () {
+
+            window.webkit.messageHandlers.jumpZQMethod.postMessage("http://tinterest.lechuangtec.com/janesi-headline/ZQFL/templete/topic1.html");
+
+        })
+        mui('.page').on('tap', '#hot2', function () {
+            window.webkit.messageHandlers.jumpZQMethod.postMessage("http://tinterest.lechuangtec.com/janesi-headline/ZQFL/templete/topic2.html");
+
+
+        })
+        mui('.page').on('tap', '#play1', function () {
+            window.webkit.messageHandlers.jumpZQMethod.postMessage("http://tinterest.lechuangtec.com/janesi-headline/ZQFL/templete/topic3.html");
+
+
+        })
+        mui('.page').on('tap', '#play2', function () {
+            window.webkit.messageHandlers.jumpZQMethod.postMessage("http://tinterest.lechuangtec.com/janesi-headline/ZQFL/templete/topic4.html");
+
+        })
+
+            mui('.page').on('tap', '#play3', function () {
+            window.webkit.messageHandlers.jumpZQMethod.postMessage("http://tinterest.lechuangtec.com/janesi-headline/ZQFL/templete/topic5.html");
+
+        })
+
+
+
+    }
+
+</script>
+</html>

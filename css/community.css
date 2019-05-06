@@ -1,0 +1,196 @@
+body{
+    background: #fff;
+    overflow: hidden;
+    overflow-y: auto;
+}
+::-webkit-scrollbar{
+    width:0;
+    height:0;
+    display: none;
+}
+.hot{
+    width: 100%;
+    padding: 0 0.32rem;
+    border-bottom:0.2rem solid #eee;
+}
+.hot>ul{
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+    padding: 0.16rem 0;
+}
+.hot>ul>li{
+    width: 50%;
+    float: left;
+    height: 0.7rem;
+    line-height: 0.7rem;
+    font-size: 0.32rem;
+}
+.hot>ul>li>img{
+    width: 0.4rem;
+    vertical-align: middle;
+    margin-right: 0.1rem;
+}
+.list{
+    width: 100%;
+}
+.list>ul{
+    width: 100%;
+    margin: 0;
+}
+.list>ul>li{
+    padding: 0.28rem 0.3rem;
+    width: 100%;
+    border-bottom: 0.01rem solid #efefef;
+    height: auto;
+}
+.list>ul>li:last-child{
+    border-bottom: none;
+}
+.midTop{
+    width: 100%;
+    height: 0.84rem;
+    overflow: hidden;
+    line-height: 0.84rem;
+}
+.midTop>.mid_Top_left{
+    width: 70%;
+    float: left;
+    overflow: hidden;
+    height: 100%;
+    color: #333;
+}
+.midTop>.mid_Top_left>img{
+    width: 0.84rem;
+    height: 100%;
+    border-radius: 50%;
+    /* background: red; */
+    vertical-align: middle;
+    margin-right: 0.21rem;
+}
+.midTop>.mid_Top_right{
+    width: 30%;
+    height: 100%;
+    float: right;
+    overflow: hidden;
+    position: relative;
+}
+.midTop>.mid_Top_right>img{
+    position: absolute;
+    right: 0;
+    top: 0.15rem;
+    height: 0.52rem;
+}
+.has_att{
+    display: none;
+}
+.midTit{
+    font-size: 0.34rem;
+    margin: 0.2rem 0;
+    color: #333;
+    line-height: 0.4rem;
+}
+.midImg{
+    width: 100%;
+    display: flex;
+    margin-bottom: 0.1rem;
+    flex-wrap: wrap;
+}
+.midImg>img{
+    width: 30%;
+    height: 1.68rem;
+    border-radius: 0.12rem;
+    margin-right: 0.23rem;
+    margin-bottom: 0.2rem;
+}
+.midImg>div{
+    width: 30%;
+    height: 1.68rem;
+    border-radius: 0.12rem;
+    margin-right: 0.23rem;
+    margin-bottom: 0.2rem;
+}
+.midBot{
+    width: 100%;
+    height: 0.36rem;
+    line-height: 0.34rem;
+    /*overflow: hidden;*/
+}
+.midBot>div{
+    float: left;
+}
+.midBotHit{
+    width: 20%;
+    height: 100%;
+    position: relative;
+    margin-right: 0.3rem;
+}
+/*.midBotHit>.imgBox{*/
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*top: 0;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*float: left;*/
+/*}*/
+.imgBox>img{
+    width: 0.34rem;
+    vertical-align: middle;
+    margin-right: 0.1rem;
+}
+.imgBox>span{
+    font-size: 0.24rem;
+    color: #999;
+    letter-spacing: 0.03rem;
+}
+
+.midBotHit>img{
+    width: 0.34rem;
+    vertical-align: middle;
+    margin-right: 0.1rem;
+}
+.midBotHit>span{
+    font-size: 0.24rem;
+    color: #999;
+    letter-spacing: 0.03rem;
+}
+
+.midBotHit .hot{
+    color: #fd6663;
+}
+.hotImgBox{
+    display: none;
+}
+/*.hasImgBox{*/
+    /*display: none;*/
+/*}*/
+.midBot>span{
+    float: right;
+    font-size: 0.24rem;
+    color: #999;
+}
+
+/* 加载提示 */
+#loading{
+    height:0.8rem;
+    line-height: 0.8rem;
+    width: 100%;
+    color: #777;
+    font-size: 0.24rem;
+    text-align: center;
+}
+#loading .load_left{
+    width: 53%;
+    text-align: right;
+    height: 100%;
+    float: left;
+}
+#loading .load_right{
+    height: 100%;
+    float: left;
+}
+#loading .load_right img{
+    margin: 0.15rem;
+    width: 0.5rem;
+    height: 0.5rem;
+}

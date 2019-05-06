@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>福利</title>
+
+</head>
+<style>
+ html, body, div, span, object, iframe,h1, h2,
+h3, h4, h5, h6, p, blockquote, pre,abbr, address, cite, code,del, dfn,
+em, img, ins,kbd, q, samp,small, strong, sub, sup, var,b, i,dl, dt, dd,
+ol, ul, li,fieldset, form, label, legend,table, caption, tbody,
+tfoot,thead,tr, th, td,article, aside, canvas, details, figcaption,
+figure, footer, header, hgroup, menu, nav, section, summary,time, mark,
+audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    outline-style:none;/*FF*/
+}
+.top{
+    overflow: hidden;
+}
+.banner{
+    width: 100%;
+}
+.liwu{
+    font-size: 0.32rem;
+    color:#333;
+    /* margin-left:20%; */
+    /* float: left; */
+}
+.roma{
+    font-size: 0.32rem;
+    color:#333;
+    /* float: right;
+    margin-right: 10% */
+}
+.nums{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+#btRed,#btBlue{
+    width: 3.2rem;
+    margin-left:0.25rem;
+    margin-top:0.1rem;
+    margin-top:0.1rem;
+}
+.context{
+       width: 100%;
+       margin-top: 0.25rem;
+    }
+    #pic{
+         width: 100%;
+
+         display: none;
+         position: absolute;
+         top:7rem;
+
+
+    }
+</style>
+<body>
+    <div class="All">
+        <div class="top">
+            <img src="../img/3/1@2x.png" class="banner">
+
+            <img src="http://tinterest.lechuangtec.com/janesi-headline/ZQFL/img/ww.gif" id="pic">
+            <div class="nums">
+                <p class="liwu"><span id="numRed">3568</span>人支持</p>
+                <p class="roma"><span id="numBlue">1953</span>人支持</p>
+            </div>
+
+            <img src="../img/3/a1@2x.png" id="btRed">
+            <img src="../img/3/a2@2x.png" id="btBlue">
+        </div>
+
+        <div class="main" style="display:none;">
+              <img src="../img/3/01@2x.png" class="context" id="pic1">
+              <img src="../img/3/02@2x.png" class="context" id="pic2">
+              <img src="../img/3/03@2x.png" class="context" id="pic3">
+              <img src="../img/3/04@2x.png" class="context" id="pic4">
+        </div>
+
+    </div>
+</body>
+<script src="../js/rem.js"></script>
+<script src="../js/jquery-2.1.1.min.js"></script>
+<script src="../js/mui.min.js "></script>
+
+
+<script>
+    window.onload = function(){
+
+        mui('.main').on('tap', '#pic1', function () {
+
+             window.webkit.messageHandlers.jumpZQMethod.postMessage({'url':"http://tinterest.lechuangtec.com/app/interest/item/video_detail_V200?itemId=af707d20687700e1803c40edfb8ee879&contentType=VIDEO",'title':'包贝尔回哈尔滨参加婚礼，凌晨突放20分钟鞭炮震怒居民：太缺德了','itemId':'af707d20687700e1803c40edfb8ee879'});
+
+
+
+        });
+         mui('.main').on('tap', '#pic2', function () {
+
+             window.webkit.messageHandlers.jumpZQMethod.postMessage({'url':"http://tinterest.lechuangtec.com/app/interest/item/detail_V200?itemId=8c8f625305a86572a6d88989280c7748&contentType=ARTICLE",'title':'包贝尔亮相上海电影节，胖到要人扶，观众惊呼认不出，这还是他吗','itemId':'8c8f625305a86572a6d88989280c7748'});
+
+        })
+         mui('.main').on('tap', '#pic3', function () {
+              window.webkit.messageHandlers.jumpZQMethod.postMessage({'url':"http://tinterest.lechuangtec.com/app/interest/item/video_detail_V200?itemId=403c75fdc214095df418ffcf98d8732d&contentType=VIDEO",'title':'满脸横肉！包贝尔突变"295斤胖子','itemId':'403c75fdc214095df418ffcf98d8732d'});
+
+        })
+         mui('.main').on('tap', '#pic4', function () {
+
+            window.webkit.messageHandlers.jumpZQMethod.postMessage({'url':"http://tinterest.lechuangtec.com/app/interest/item/detail_V200?itemId=299bd953590695728ccf42ae2ab136f3&contentType=ARTICLE",'title':'明星被公主抱的瞬间，贾玲和包贝尔搞笑，黄渤又惊又喜！','itemId':'299bd953590695728ccf42ae2ab136f3'});
+
+        })
+
+
+        mui('.top').on('tap', '#btRed', function () {
+            var numRed = document.getElementById('numRed');
+            numRed.innerHTML = parseInt(numRed.innerHTML) + 1;
+            $("#pic").css("display", "block");
+            setTimeout(function () {//定时器
+                $("#pic").css("display", "none");//将图片的display属性设置为none
+            },
+                1500);
+        })
+
+                mui('.top').on('tap', '#btBlue', function () {
+
+                            var btBlue = document.getElementById('numBlue');
+                            btBlue.innerHTML = parseInt(btBlue.innerHTML) + 1;
+                             $("#pic").css("display", "block");
+                            setTimeout(function () {//定时器
+                                    $("#pic").css("display", "none");//将图片的display属性设置为none
+                                },
+                                    1500);
+                })
+
+
+
+    }
+</script>
+</html>

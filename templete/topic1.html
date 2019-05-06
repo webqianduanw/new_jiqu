@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>福利</title>
+
+</head>
+<style>
+ html, body, div, span, object, iframe,h1, h2,
+h3, h4, h5, h6, p, blockquote, pre,abbr, address, cite, code,del, dfn,
+em, img, ins,kbd, q, samp,small, strong, sub, sup, var,b, i,dl, dt, dd,
+ol, ul, li,fieldset, form, label, legend,table, caption, tbody,
+tfoot,thead,tr, th, td,article, aside, canvas, details, figcaption,
+figure, footer, header, hgroup, menu, nav, section, summary,time, mark,
+audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    outline-style:none;/*FF*/
+}
+.top{
+    overflow: hidden;
+}
+.banner{
+    width: 100%;
+}
+.liwu{
+    font-size: 0.32rem;
+    color:#333;
+    /* margin-left:20%; */
+    /* float: left; */
+}
+.roma{
+    font-size: 0.32rem;
+    color:#333;
+    /* float: right;
+    margin-right: 10% */
+}
+.nums{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+#btRed,#btBlue{
+    width: 3.2rem;
+    margin-left:0.25rem;
+    margin-top:0.1rem;
+    margin-top:0.1rem;
+}
+.context{
+       width: 100%;
+       margin-top: 0.25rem;
+    }
+    #pic{
+         width: 100%;
+
+         display: none;
+         position: absolute;
+         top:7rem;
+
+
+    }
+</style>
+<body>
+    <div class="All">
+        <div class="top">
+            <img src="../img/1/1@2x.png" class="banner">
+
+            <img src="http://tinterest.lechuangtec.com/janesi-headline/ZQFL/img/ww.gif" id="pic">
+
+
+             <div class="nums">
+                <p class="liwu"><span id="numRed">7653</span>人支持</p>
+                <p class="roma"><span id="numBlue">1576</span>人支持</p>
+            </div>
+            <img src="../img/1/a1@2x.png" id="btRed">
+            <img src="../img/1/a2@2x.png" id="btBlue">
+        </div>
+
+        <div class="main" style="display:none;">
+              <img src="../img/1/01@2x.png" class="context" id="pic1">
+              <img src="../img/1/02@2x.png" class="context" id="pic2">
+              <img src="../img/1/03@2x.png" class="context" id="pic3">
+              <img src="../img/1/04@2x.png" class="context" id="pic4">
+        </div>
+
+    </div>
+</body>
+<script src="../js/rem.js"></script>
+<script src="../js/jquery-2.1.1.min.js"></script>
+<script src="../js/mui.min.js "></script>
+
+
+<script>
+    window.onload = function(){
+
+        mui('.main').on('tap', '#pic1', function () {
+
+             window.webkit.messageHandlers.jumpZQMethod.postMessage({'url':"http://tinterest.lechuangtec.com/app/interest/item/video_detail_V200?itemId=289e3572b9c181287861574ef3d87575&contentType=VIDEO",'title':'1.冯提莫在直播时喊牙疼，不小心关了美颜功能，素颜是这样？','itemId':'289e3572b9c181287861574ef3d87575'});
+
+
+
+        });
+         mui('.main').on('tap', '#pic2', function () {
+
+             window.webkit.messageHandlers.jumpZQMethod.postMessage({'url':"http://tinterest.lechuangtec.com/app/interest/item/video_detail_V200?itemId=f8a6d221e90228c4074c9847469f28f4&contentType=VIDEO",'title':'冯提莫学别人跳《佛系少女》的舞蹈，又扭腰又摆手，舞姿有点怪','itemId':'f8a6d221e90228c4074c9847469f28f4'});
+
+        })
+         mui('.main').on('tap', '#pic3', function () {
+              window.webkit.messageHandlers.jumpZQMethod.postMessage({'url':"http://tinterest.lechuangtec.com/app/interest/item/video_detail_V200?itemId=2c8ee10b8bb97dc682ada8460a53d131&contentType=VIDEO",'title':'3.网红M哥、莉哥、冯提莫翻唱《答案》，丝毫不输原唱','itemId':'2c8ee10b8bb97dc682ada8460a53d131'});
+
+        })
+         mui('.main').on('tap', '#pic4', function () {
+
+            window.webkit.messageHandlers.jumpZQMethod.postMessage({'url':"http://tinterest.lechuangtec.com/app/interest/item/detail_V200?itemId=63348112f0493f76847af074c9698753&contentType=ARTICLE",'title':'4.冯提莫出租车直播, 当别人她问一天的收入时，让所有人无语','itemId':'63348112f0493f76847af074c9698753'});
+
+        })
+
+
+        mui('.top').on('tap', '#btRed', function () {
+            var numRed = document.getElementById('numRed');
+            numRed.innerHTML = parseInt(numRed.innerHTML) + 1;
+            $("#pic").css("display", "block");
+            setTimeout(function () {//定时器
+                $("#pic").css("display", "none");//将图片的display属性设置为none
+            },
+                1500);
+        })
+
+                mui('.top').on('tap', '#btBlue', function () {
+
+                            var btBlue = document.getElementById('numBlue');
+                            btBlue.innerHTML = parseInt(btBlue.innerHTML) + 1;
+                             $("#pic").css("display", "block");
+                            setTimeout(function () {//定时器
+                                    $("#pic").css("display", "none");//将图片的display属性设置为none
+                                },
+                                    1500);
+                })
+
+
+
+    }
+</script>
+</html>

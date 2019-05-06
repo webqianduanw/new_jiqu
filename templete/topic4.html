@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>福利</title>
+
+</head>
+<style>
+ html, body, div, span, object, iframe,h1, h2,
+h3, h4, h5, h6, p, blockquote, pre,abbr, address, cite, code,del, dfn,
+em, img, ins,kbd, q, samp,small, strong, sub, sup, var,b, i,dl, dt, dd,
+ol, ul, li,fieldset, form, label, legend,table, caption, tbody,
+tfoot,thead,tr, th, td,article, aside, canvas, details, figcaption,
+figure, footer, header, hgroup, menu, nav, section, summary,time, mark,
+audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    outline-style:none;/*FF*/
+}
+.top{
+    overflow: hidden;
+}
+.banner{
+    width: 100%;
+}
+.liwu{
+    font-size: 0.32rem;
+    color:#333;
+    /* margin-left:20%; */
+    /* float: left; */
+}
+.roma{
+    font-size: 0.32rem;
+    color:#333;
+    /* float: right;
+    margin-right: 10% */
+}
+.nums{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+#btRed,#btBlue{
+    width: 3.2rem;
+    margin-left:0.25rem;
+    margin-top:0.1rem;
+    margin-top:0.1rem;
+}
+.context{
+       width: 100%;
+       margin-top: 0.25rem;
+    }
+    #pic{
+         width: 100%;
+
+         display: none;
+         position: absolute;
+         top:7rem;
+
+
+    }
+</style>
+<body>
+    <div class="All">
+        <div class="top">
+            <img src="../img/4/1@2x.png" class="banner">
+
+            <img src="http://tinterest.lechuangtec.com/janesi-headline/ZQFL/img/ww.gif" id="pic">
+            <div class="nums">
+                <p class="liwu"><span id="numRed">2956</span>人支持</p>
+                <p class="roma"><span id="numBlue">1056</span>人支持</p>
+            </div>
+
+            <img src="../img/4/a1@2x.png" id="btRed">
+            <img src="../img/4/a2@2x.png" id="btBlue">
+        </div>
+
+        <div class="main" style="display:none;">
+              <img src="../img/4/01@2x.png" class="context" id="pic1">
+              <img src="../img/4/02@2x.png" class="context" id="pic2">
+              <img src="../img/4/03@2x.png" class="context" id="pic3">
+              <img src="../img/4/04@2x.png" class="context" id="pic4">
+        </div>
+
+    </div>
+</body>
+<script src="../js/rem.js"></script>
+<script src="../js/jquery-2.1.1.min.js"></script>
+<script src="../js/mui.min.js "></script>
+
+
+<script>
+    window.onload = function(){
+
+        mui('.main').on('tap', '#pic1', function () {
+
+             window.webkit.messageHandlers.jumpZQMethod.postMessage({'url':"http://tinterest.lechuangtec.com/app/interest/item/detail_V200?itemId=b5cf251dc0d0e12658505015f1cccf59&contentType=ARTICLE",'title':'LOL：腾讯又胜诉了！这次抄袭的英雄联盟，法院判赔偿290万美元','itemId':'b5cf251dc0d0e12658505015f1cccf59'});
+
+
+
+        });
+         mui('.main').on('tap', '#pic2', function () {
+
+             window.webkit.messageHandlers.jumpZQMethod.postMessage({'url':"http://tinterest.lechuangtec.com/app/interest/item/detail_V200?itemId=90b12ce6556a80898eed293dfecec8f0&contentType=ARTICLE",'title':'英雄联盟：这些英雄后期无敌，进来看看有没有你喜欢的','itemId':'90b12ce6556a80898eed293dfecec8f0'});
+
+        })
+         mui('.main').on('tap', '#pic3', function () {
+              window.webkit.messageHandlers.jumpZQMethod.postMessage({'url':"http://tinterest.lechuangtec.com/app/interest/item/detail_V200?itemId=0b4b355a5f1f0c0ad6fbce22e7d8ffa0&contentType=ARTICLE",'title':'英雄联盟必须出金身的三个上单，不出金身你就是不会玩','itemId':'0b4b355a5f1f0c0ad6fbce22e7d8ffa0'});
+
+        })
+         mui('.main').on('tap', '#pic4', function () {
+
+            window.webkit.messageHandlers.jumpZQMethod.postMessage({'url':"http://tinterest.lechuangtec.com/app/interest/item/detail_V200?itemId=3d69be814d6259f191ec06958552eeae&contentType=ARTICLE",'title':'英雄联盟里，盲僧的R闪还没有他们的R闪秀，快进来了解一下。','itemId':'3d69be814d6259f191ec06958552eeae'});
+
+        })
+
+
+        mui('.top').on('tap', '#btRed', function () {
+            var numRed = document.getElementById('numRed');
+            numRed.innerHTML = parseInt(numRed.innerHTML) + 1;
+            $("#pic").css("display", "block");
+            setTimeout(function () {//定时器
+                $("#pic").css("display", "none");//将图片的display属性设置为none
+            },
+                1500);
+        })
+
+                mui('.top').on('tap', '#btBlue', function () {
+
+                            var btBlue = document.getElementById('numBlue');
+                            btBlue.innerHTML = parseInt(btBlue.innerHTML) + 1;
+                             $("#pic").css("display", "block");
+                            setTimeout(function () {//定时器
+                                    $("#pic").css("display", "none");//将图片的display属性设置为none
+                                },
+                                    1500);
+                })
+
+
+
+    }
+</script>
+</html>
