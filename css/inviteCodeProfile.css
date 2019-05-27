@@ -93,11 +93,12 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
+    background: #F6F6F6;
 }
 
 .i_container .bottomContainer {
     width: 10rem;
-    height: 1.3rem;
+    height: 1.92rem;
     flex-grow: 0;
 }
 
@@ -106,9 +107,16 @@ body {
     flex-grow: 1;
     overflow: hidden;
 }
-
+.I_wrapper .whatIsInviteCode .top_yaoqing{
+	width: 9.2rem;
+    height: 5.4133rem;
+    margin: .4rem;
+    background: #fff;
+    border-radius: .2666rem;
+}
+}
 .I_wrapper .whatIsInviteCode .img1Bg {
-    background-color: #fff;
+    height: 3.04rem;
 }
 
 .I_wrapper .whatIsInviteCode .img1 {
@@ -126,39 +134,68 @@ body {
 .I_wrapper .img1String {
     font-family: PingFangSC-Medium;
     font-size: 24px;
-    color: #FD4844;
+   	color:rgba(34,34,34,1);
     letter-spacing: -0.5px;
     text-align: center;
-    margin-bottom: 10px
+    padding: 0.5405rem 0 0.1621rem 0;
 }
 
 .I_wrapper .whatIsInviteCode .img1Bg .img1String2 {
     font-family: PingFangSC-Regular;
-    font-size: 14px;
-    color: #333333;
-    letter-spacing: -0.5px;
+    font-size:0.3733rem;
+    color:rgba(102,102,102,1);
+    /*letter-spacing: -0.5px;*/
     text-align: center;
 }
-
+.I_wrapper .whatIsInviteCode .stringBg{
+	position: relative;
+	
+}
+.I_wrapper .whatIsInviteCode .stringBg .img1String2{
+	margin: 0 0.4054rem 0 1.054rem;
+	font-size:0.3733rem;
+	font-family:PingFangSC-Regular;
+	color:rgba(102,102,102,1);
+	line-height:0.5405rem
+}
+.I_wrapper .whatIsInviteCode .stringBg .img1String2:before{
+	content: "1";
+	position: absolute;
+	left: .45rem;
+	top: .05rem;
+	display: inline-block;
+	width: 0.4864rem;
+	height: 0.4864rem;
+	background: url(../icon/nums_invite.png) no-repeat;
+	background-size: 100% 100%;
+	text-align: center;
+	font-size:0.3243rem;
+	font-family:DIN-Medium;
+	font-weight:500;
+	color:rgba(255,255,255,1);
+	line-height:0.4864rem;
+}
+.I_wrapper .whatIsInviteCode .stringBg:nth-of-type(2) .img1String2:before{
+	content: "2";
+}
 
 .I_wrapper .whatIsInviteCode .img2BGTemp {
     position: relative;
-    width: 10rem;
+    width: 100%;
     height: 1.88rem;
     background-color: #fff;
+    margin-top: 0.4054rem;
 }
 
 .I_wrapper .whatIsInviteCode .img2Bg {
     position: absolute;
-    width: 10rem;
+    width: 100%;
     height: 1.88rem;
-    background-color: #fff;
-    top: -20px
 }
 
 .I_wrapper .whatIsInviteCode .img2Bg .img2 {
     width: 6.1rem;
-    height: 1.89rem;
+    height: 1.84rem;
     margin: 0 auto;
 }
 
@@ -172,7 +209,7 @@ body {
 
 .I_wrapper .whatIsInviteCode .inviteCode .codeNum {
     position: absolute;
-    width: 10rem;
+    width: 100%;
     height: 1.89rem;
     text-align: center;
     top: 0;
@@ -213,53 +250,59 @@ body {
 }
 
 .I_wrapper .howToUseCode {
-    width: 10rem;
+   	width: 9.2rem;
     background-color: #fff;
     padding-top: 0.8rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: .4rem;
+    margin-top: 0;
+    border-radius: 0.2702rem;
 }
 
 .I_wrapper .howToUseCode .stringBg {
-    margin-left: 0.69rem;
-    margin-right: 0.69rem;
     font-size: 14px;
     color: #333333;
 }
 
 .I_wrapper .howToUseCode .img3 {
-    width: 7.3rem;
-    margin-top: 0.42rem;
-    margin-bottom: 0.42rem;
+    width:8.5333rem;
+    margin-top: 0.32rem;
+    margin-bottom: 0.32rem;
 }
 
 .I_wrapper .howToUseCode .img4 {
-    width: 7.3rem;
-    margin-top: 0.42rem;
-    margin-bottom: 0.42rem;
+     width:8.5333rem;
+    margin-top: 0.32rem;
+    margin-bottom: 0.32rem;
 }
 
 .footerBtn {
     position: fixed;
     bottom: 0;
     width: 10rem;
-    height: 1.2rem;
+    height: 1.92rem;
     background-color: #fff;
 }
 
 .footerBtn .btn {
-    width: 8.53rem;
-    height: 1.1rem;
-    background-color: #FD4844;
+    width: 9.2rem;
+    height: 1.2266rem;
+    background:-webkit-linear-gradient(135deg, rgba(255,223,93,1) 0%, rgba(255,204,0,1) 100%);
+    background:-moz-linear-gradient(135deg, rgba(255,223,93,1) 0%, rgba(255,204,0,1) 100%);
+    background:-o-linear-gradient(135deg, rgba(255,223,93,1) 0%, rgba(255,204,0,1) 100%);
+    background:linear-gradient(135deg, rgba(255,223,93,1) 0%, rgba(255,204,0,1) 100%);
     text-align: center;
-    font-family: PingFangSC-Regular;
+    font-family:PingFangSC-Medium;
+    font-weight:500;
     font-size: 16px;
-    color: #FFFFFF;
+    color:rgba(34,34,34,1);
     letter-spacing: 0;
-    line-height: 1.1rem;
-    border-radius: 0.55rem;
+    line-height: 1.2266rem;
+    border-radius: 0.6666rem;
     margin: 0 auto;
+    margin-top: .36rem;
 }
 
 .mui-toast-container {

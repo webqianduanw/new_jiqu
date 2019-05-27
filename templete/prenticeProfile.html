@@ -20,7 +20,7 @@
         <div class="header" id="k_header">
 
             <div class="headerBG">
-                <img class="headerRightIcon" src="../icon/welfare_apprentices_gold_bg@2x.png" />
+                <!-- <img class="headerRightIcon" src="../icon/welfare_apprentices_gold_bg@2x.png" /> -->
                 <div class="coin">
                     <p class="jiahao">+
                         <span class="count">0</span>
@@ -44,8 +44,9 @@
                     <p class="additional">累计贡献(金币)</p>
                 </div>
             </div>
+            <div class="headFooter1"></div>
 
-            <div class="footerLine" id="k_footerLine"></div>
+            <!-- <div class="footerLine" id="k_footerLine"></div> -->
         </div>
         <div class="container" id="k_container">
             <div class="mui-content" id="k_mui-content">
@@ -121,7 +122,7 @@
             } else {
 
                 sliderLine.style.animation = '';
-                sliderLine.style.left = '22%';
+                sliderLine.style.left = '20%';
             }
             fetchData(0, false);
         } else {
@@ -141,7 +142,7 @@
             } else {
 
                 sliderLine.style.animation = '';
-                sliderLine.style.left = '73%';
+                sliderLine.style.left = '71%';
             }
             fetchData(1, false);
         }
@@ -184,7 +185,7 @@
     function getSummary() {
         // 获取邀请码
         var reqApi = '/app/interest/invite/summary';
-        window.JanesiApi.sendApi(reqApi, 'post', reqParams, function (res) {
+       window.JanesiApi.sendApi(reqApi, 'post', reqParams, function (res) {
             if (res.code == 0) {
 
                 var cont = [];
@@ -194,7 +195,7 @@
                 cont[2].innerHTML = res.result.inviteCount;
                 cont[3].innerHTML = res.result.contribution;
             }
-        })
+    })
     }
 
 
@@ -213,25 +214,25 @@
 
                             ulContainer.innerHTML = '<div class = "empty" id = "k_empty1">' +
                                 '<div class = "emptyBG">' + '</div>' +
-                                '<div class = "emptyTopString">' + '50%以上的用户在看点头条靠徒儿进贡' + '</div>' +
-                                '<p class = "emptyLeftString">' + '躺着赚零花钱，' +
-                                '<span class ="emptyRigString" onclick="getStudent(this)">' + '立即去收徒>>' +
-                                '</span>' + '</p>'
+                                '<div class = "emptyTopString">' + '50%以上的用户在即趣靠徒儿进贡躺' + '</div>' +
+                                '<p class = "emptyLeftString">' + '着赚零花钱，' +
+                                '</p>' +
+                                '<div class="goApprentice" onclick="getStudent(this)">立即去收徒</div>' +
                             '</div>';
                         } else {
 
                             ulContainer.innerHTML = '<div class = "empty" id = "k_empty2">' +
                                 '<div class = "emptyBG ranking">' + '</div>' +
-                                '<div class = "emptyTopString">' + '50%以上的用户在看点头条靠徒儿进贡' + '</div>' +
-                                '<p class = "emptyLeftString">' + '躺着赚零花钱，' +
-                                '<span class ="emptyRigString" onclick="getStudent1(this)">' + '立即去收徒>>' +
-                                '</span>' + '</p>'
+                                '<div class = "emptyTopString">' + '50%以上的用户在即趣靠徒儿进贡躺' + '</div>' +
+                                '<p class = "emptyLeftString">' + '着赚零花钱。' +
+                                '</p>'+
+                                '<div class="goApprentice" onclick="getStudent(this)">立即去收徒</div>'+
                             '</div>';
                         }
                         var k_empty = document.getElementById(index == 0 ? "k_empty1" : "k_empty2");
                         var k_mui_slider_group = document.getElementById("k_mui-slider-group");
                         // var vaHeight = k_mui_slider_group.offsetHeight + 'px';
-                        var vaHeight = 220 + 'px';
+                        var vaHeight = 6.96 + 'rem';
                         k_empty.style.height = vaHeight;
                     } else {
                         var array = res.result;
@@ -245,6 +246,7 @@
 
                                 li.innerHTML =
                                     `<div class="row">
+                                        <div class = order isRanking>${(i + 1)}</div>
                                         <img class = "avatar" src="${url}"/>
                                         <div class="nameMobile">
                                             <p class = "name">${model.nickName}</p>
@@ -252,10 +254,8 @@
                                         </div>
                                         <div class="sumGrow">
                                             <div class = "sumCount">
-                                                <img class = "icon" src = "../icon/coinIcon@2x.png" />
-                                                <p class = "jiahao">+<span class = "count">${model.dayContribution}</span></p>
+                                                <p class = "jiahao"><span class = "count">${model.dayContribution}元</span></p>
                                             </div>
-                                            <p class = "addition">今日贡献</p>
                                         </div>
                                             <div class = "line" />
                                     </div>
@@ -273,10 +273,8 @@
                                     </div>
                                     <div class="sumGrow">
                                         <div class = "sumCount">
-                                            <img class = "icon" src = "../icon/coinIcon@2x.png" />
-                                            <p class = "jiahao">+<span class = "count">${model.contribution}</span></p>
+                                            <p class = "jiahao"><span class = "count">${model.contribution}元</span></p>
                                         </div>
-                                        <p class = "addition">累计贡献</p>
                                     </div>
                                     <div class = "line" />
                                 </div>
@@ -297,7 +295,7 @@
 
                     }
 
-                })
+            })
 
 
         }

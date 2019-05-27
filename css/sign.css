@@ -11,7 +11,7 @@ body {
 }
 
 .signDetail {
-	padding: 0.3rem 0.4rem;
+	padding: .3rem .4rem 0 .3rem;
 	display: flex;
 	justify-content: space-between;
 }
@@ -25,15 +25,15 @@ body {
 
 .signRecord>span,
 .signRule>span {
-	color: #666666;
-	font-size: 0.32rem;
+	color:rgba(131,82,4,1);
+	font-size:0.34rem;
 	vertical-align: middle;
 }
 
 .signWealth {
 	width: 100%;
-	height: 5.68rem;
-	padding: 0 0.4rem;
+	/* height: 5.68rem; */
+	/* padding: 0 0.4rem; */
 	box-sizing: border-box;
 	position: relative;
 }
@@ -41,16 +41,16 @@ body {
 .signWealthInner {
 	width: 100%;
 	height: 100%;
-	padding-top: 0.88rem;
+	/* padding-top: 0.88rem; */
 	box-sizing: border-box;
-	background-color: #FE4B46;
-	border-radius: 0.213rem;
+	/* background-color: #FE4B46; */
+	/* border-radius: 0.213rem; */
 	text-align: center;
 	position: relative;
 }
 
 .signDays {
-	font-size: 0.4267rem;
+	font-size:0.37rem;
 	color: #fff;
 	position: relative;
 }
@@ -81,23 +81,36 @@ body {
 	transform: translateY(-50%);
 	right: 30%;
 	opacity: 0.45;
-	
-}
 
+}
+.singCont{
+	width: 3.275rem;
+	height: 0.7rem;
+	background:rgba(255,255,255,1);
+	border-radius:0.35rem;
+	opacity:0.6806;
+	margin: 0 auto;
+	margin-top: 0.25rem;
+}
+.singCont span{
+	font-size:0.35rem;
+	color:rgba(223,126,0,1);
+	line-height: .7rem;
+}
 .signCoin {
-	margin-top: 0.267rem;
+	/* margin-top: 0.267rem; */
 	position: relative;
 }
 
 .signCoin span:nth-of-type(1) {
 	color: #FFFFFF;
-	font-size: 1.12rem;
+	font-size: .9rem;
 	font-weight: 600;
 }
 
 .signCoin span:nth-of-type(2) {
-	font-size: 0.4267rem;
-	color: #fff;
+	font-size: 0.34rem;
+	color: #FC4848;
 	vertical-align: super;
 }
 
@@ -111,33 +124,35 @@ body {
 }
 
 .signShare {
-	color: #EF2823;
-	width: 7.413rem;
+	color: #333333;
+	width: 8.4rem;
 	height: 1.333rem;
 	line-height: 1.333rem;
-	font-size: 0.4267rem;
-	font-weight: 550;
-	background-color: #FFE400;
+	font-size: 0.45rem;
+	background:url('../img/signShareBtn.png') no-repeat;
+	background-size: 100% 100%;
 	text-align: center;
 	border-radius: 0.7467rem;
 	position: absolute;
-	bottom: 0.533rem;
+	bottom: 0;
 	left: 50%;
-	margin-left: -3.7065rem;
+	margin-left: -4.2rem;
 	animation: heartMove 2s linear infinite;
 }
 .signFinish{
-	width: 7.413rem;
+	color: #333333;
+	width: 8.4rem;
 	height: 1.333rem;
 	line-height: 1.333rem;
-	font-size: 0.48rem;
-	font-weight: 550;
-	color:#FEFF66;
+	font-size: 0.45rem;
+	background:url('../img/signShareBtn1.png') no-repeat;
+	background-size: 100% 100%;
 	text-align: center;
+	border-radius: 0.7467rem;
 	position: absolute;
-	bottom: 0.533rem;
+	bottom: 0;
 	left: 50%;
-	margin-left: -3.7065rem;
+	margin-left: -4.2rem;
 }
 .signGoShareTit{
 	color:#fff;
@@ -146,19 +161,19 @@ body {
 	letter-spacing: 1px;
 }
 .signGoShare{
-	color: #EF2823;
-	width: 7.413rem;
+	color: #333333;
+	width: 8.4rem;
 	height: 1.333rem;
 	line-height: 1.333rem;
-	font-size: 0.4267rem;
-	font-weight: 550;
-	background-color: #FFE400;
+	font-size: 0.45rem;
+	background:url('../img/signShareBtn.png') no-repeat;
+	background-size: 100% 100%;
 	text-align: center;
 	border-radius: 0.7467rem;
 	position: absolute;
-	bottom: 0.533rem;
+	bottom: 0;
 	left: 50%;
-	margin-left: -3.7065rem;
+	margin-left: -4.2rem;
 	animation: heartMove 2s linear infinite;
 }
 /*心跳效果*/
@@ -177,27 +192,32 @@ body {
 
 .signBottom {
 	padding-top: 0.2rem;
-	padding-left: 1rem;
-	padding-right: 1rem;
+	padding-left: 0.5rem;
+	padding-right: 0.45rem;
 	background-color: #fff;
-	margin-top: 0.8rem;
+	/*margin-top: 0.8rem;*/
+	height: 2rem;
 }
 
 .userWealth {
 	/* width: 2.2rem;
 	height: 0.88rem; */
-	background-color: #B60D08;
+	background-color: #ED9200;
+    opacity: .5;
 	border-radius: 0 0.613rem 0.613rem 0;
 	position: absolute;
 	top: 1.333rem;
-	left: -0.4rem;
+	left: 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
     animation: upMove 2s linear infinite;
-     padding-right: 0.1rem; 
+     padding-right: 0.1rem;
 }
-
+.share_btn{
+	height: 1.334rem;
+	position: relative;
+}
 @keyframes upMove {
 	0% {
 		transform: translateY(0px);
@@ -238,15 +258,16 @@ body {
 	align-items: center;
 	justify-content: space-between;
 	position: relative;
+	margin-top: 0.5rem;
 }
 
 .circle {
-	width: 10px;
-	height: 10px;
-	background-color: #fff;
-	border: 1px solid #DFDFDF;
-	border-radius: 6px;
+	width: 0.75rem;
+	height: 0.75rem;
 	position: relative;
+	background:url('../img/choose.png') no-repeat;
+	background-size: 100% 100%;
+	z-index: 2;
 }
 
 
@@ -255,7 +276,7 @@ body {
 .changeLine {
 	/*width: 10%;*/
 	height: 2px;
-	background-color: #FD4844;
+	background-color: #FFC216;
 	border-radius: 1px;
 	position: absolute;
 	top: 0;
@@ -267,29 +288,34 @@ body {
 /*签到更改样式*/
 .signed{
 	background: url('../img/research_choose.png') no-repeat center/cover;
-	width: 14px;
-	height:14px;
+	width: 0.7rem;
+	height:0.7rem;
 	border: none;
 	z-index: 2;
 }
 /*去除第七天的圈*/
 .line div:nth-of-type(7){
-	border:1px solid #fff;
+	background: none;
 }
 /*默认宝箱*/
 .gift {
-	background: url('../img/welfare_gift@2x.png') no-repeat center/cover;
-	width: 0.56rem;
-	height: 0.56rem;
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%) translateX(25%);
-	right: 0;
-	z-index: 4;
+    width: 0.775rem;
+    height: 0.675rem;
+    position: absolute;
+    /* top: 50%; */
+    /* transform: translateY(-50%) translateX(25%); */
+    right: 0px;
+    z-index: 4;
+	bottom: -.362rem;
+	background: url(../img/welfare_gift@2x.png) no-repeat center/cover #ffffff;
+	background-size: 100% 100%;
 }
 /*更换第七天宝箱*/
 .gift.sevenGift{
-	background: url('../img/welfare_gift_open@2x.png') no-repeat center/cover;	
+	width: 0.95rem;
+  	height: 0.775rem;
+	background: url('../img/welfare_gift_open@2x.png') no-repeat center/cover #ffffff;
+	background-size: 100% 100%;
 }
 
 .line div:after {
@@ -299,42 +325,42 @@ body {
 	color: #999999;
 	font-size: 0.32rem;
 	position: absolute;
-	top: calc(50% + 0.32rem);
+	top: calc(50% + 0.62rem);
 }
 
 .line div:nth-of-type(1):after {
-	content: '第1天';
-	left: 0;
+	content: '1天';
+	left: 17%;
 }
 
 .line div:nth-of-type(2):after {
-	content: '第2天';
-	left: -60%;
+	content: '2天';
+	left: 17%;
 }
 
 .line div:nth-of-type(3):after {
-	content: '第3天';
-	left: -60%;
+	content: '3天';
+	left: 17%;
 }
 
 .line div:nth-of-type(4):after {
-	content: '第4天';
-	left: -60%;
+	content: '4天';
+	left: 17%;
 }
 
 .line div:nth-of-type(5):after {
-	content: '第5天';
-	left: -60%;
+	content: '5天';
+	left: 17%;
 }
 
 .line div:nth-of-type(6):after {
-	content: '第6天';
-	left: -60%;
+	content: '6天';
+	left: 17%;
 }
 
 .line div:nth-of-type(7):after {
-	content: '第7天';
-	left: -100%;
+	content: '7天';
+	left: 17%;
 }
 
 .placeHolder {
@@ -347,7 +373,7 @@ body {
 	background-color: #F5F5F5;
 	width: 100%;
 	position: absolute;
-	top: 9.333rem;
+	top: 9.1rem;
 	left: 0;
 	bottom: 0;
 }
@@ -460,13 +486,16 @@ body {
 	line-height: 1.12rem;
 	text-align: center;
 	border-radius:0.7467rem ;
-	background-color:#FD4844;
+	background: -webkit-linear-gradient(135deg, rgba(255,223,93,1) 0%, rgba(255,204,0,1) 100%);
+    background: -moz-linear-gradient(135deg, rgba(255,223,93,1) 0%, rgba(255,204,0,1) 100%);
+    background: -o-linear-gradient(135deg, rgba(255,223,93,1) 0%, rgba(255,204,0,1) 100%);
+    background: linear-gradient(135deg, rgba(255,223,93,1) 0%, rgba(255,204,0,1) 100%);
 	position: absolute;
 	bottom:0.533rem;
 	left:50%;
 	transform: translateX(-50%);
-	color:#fff;
-	font-size: 0.4267rem;	
+	color:#222222;
+	font-size: 0.4267rem;
 }
 .fullRuleMask{
 	width:100%;
@@ -572,7 +601,7 @@ body {
 	font-size:0.293rem;
 }
 .rightTit{
-	color:#333333;
+	color:#FF5050;
 	font-size:0.373rem ;
 }
 .noMoreData{
@@ -593,8 +622,8 @@ body {
         padding: 0;
     }
     body {
-        position: relative; 
-    } 
+        position: relative;
+    }
     p,span {
         font-size: .43rem;
         margin: 0;
@@ -609,7 +638,7 @@ body {
         left: 0;
 		background-color: rgba(0, 0, 0, .87);
 		z-index: 999;
-		
+
 	}
 	.signFirst_mask .closeCancel{
 		position: absolute;
@@ -698,8 +727,8 @@ body {
         position: absolute;
         top: 3.33rem;
         left: 50%;
-        margin-left: -4.52rem;
-        width: 9.04rem;
+        margin-left: -3.73rem;
+        /* width: 9.04rem; */
         height: 9.07rem;
         animation: showAnimation .5s;
         transform: translateZ(0px);
@@ -712,16 +741,17 @@ body {
 		height: .8rem;
 	}
     .shareFirst_content img{
-        width: 100%;
+		width: 7.466rem;
+		height: 100%;
     }
     .shareFirst_content .share_bg {
         position: absolute;
-        top: 1.23rem;
+        top: 4.23rem;
         left: 50%;
         margin-left: -3.25rem;
         width: 6.51rem;
-        height: 2.67rem;
-        background-color: #FFFCEC;
+        /* height: 2.67rem;
+        background-color: #FFFCEC; */
     }
     .share_bg .share_bg_content,
     .share_bg p,
@@ -732,47 +762,82 @@ body {
         text-align: center;
     }
     .share_bg .share_bg_content{
-        top: .21rem;
+        /* top: .21rem;
         left: 50%;
         margin-left: -3.06rem;
         width: 6.13rem;
         height: 2.67rem;
         border:1px solid #FFD396;
-        border-bottom: 0;
+        border-bottom: 0; */
     }
     .share_bg p:nth-of-type(1) {
-        top: .91rem;
-        font-size: .43rem;
-        color: #333;
+        top: .35rem;
+		height:.76rem;
+		line-height:.76rem;
+		font-size:.64rem;
+		font-family:PingFangSC-Medium;
+		font-weight:500;
+		color:rgba(255,242,188,1);
     }
     .share_bg p:nth-of-type(2) {
-        top: 2.16rem;
+        top: 1.11rem;
         font-size: .37rem;
         font-weight: bold;
-        color: #FF4E39;
+        /* color: #FF4E39; */
     }
     .share_bg p:nth-of-type(2) span {
-        font-size: .64rem;
+		font-size: .64rem;
+		font-family:PingFangSC-Medium;
+		font-weight:500;
+		color:rgba(255,242,188,1);
     }
     .share_bg p:nth-of-type(2) .additionNums {
-        font-size: 1.39rem;
-    }
+		font-size: 1.0663rem;
+		position: relative;
+	}
+	.share_bg p:nth-of-type(2) .additionNums::after{
+		content: "";
+		position: absolute;
+		right: -.4rem;
+    	bottom: .3rem;
+		width: .3466rem;
+		height: .4rem;
+		background: url(../icon/sign/sing_money.png) no-repeat;
+		background-size: 100% 100%;
+	}
     .share_bg .shareSecond {
-        top: 6rem;
+		position: relative;
+        top: 2.7rem;
         left: 50%;
         margin-left: -2.94rem;
-        width: 5.87rem;
-        height: 1.33rem;
-        line-height: 1.33rem;
-        font-size: .43rem;
-        font-weight: bold;
-        background-color: #FCF66E;
-        color: #EF2823;
-		border-radius: 1.33rem;
+        width: 4.87rem;
+        height: 1.2rem;
+        line-height: 1.2rem;
+        font-size: .42rem;
+		font-family:PingFangSC-Semibold;
+		font-weight:600;
+        background-color: rgba(228,21,0,1);
+        color: #FFFF00;
+		border-radius: 1.2rem;
 		animation: beats 1.5s infinite;
-		transform: translateZ(0px)
-	} 
-	
+		transform: translateZ(0px);
+		text-align: left;
+		padding-left: 1rem;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.share_bg .shareSecond::before{
+		content: "";
+		position: absolute;
+		width: .48rem;
+		height: .48rem;
+		background: url(../icon/sign/sing_share.png) no-repeat;
+		background-size: 100% 100%;
+		left: .4rem;
+		top: .34rem;
+	}
+
 	.share_bg .shareSecond.btnColor{
 		background-color: #FFFCBF;
 	}
@@ -830,7 +895,7 @@ body {
 		height: 1.44rem;
 		animation: shareBeats 1.5s infinite;
 		transform: translateZ(0px)
-	} 
+	}
 	@keyframes shareBeats {
         0% {
             transform: scale(1);
@@ -844,10 +909,12 @@ body {
             transform: scale(1);
             -webkit-transform: scale(1);
         }
-    }
+	}
+
+	.welfare_bg{
+		width: 100%;
+		height: 4.675rem;
+		background: url('../img/welfare_bg.png') no-repeat;
+		background-size: 100% 100%;
+	}
 /*  */
-
-
-
-
-

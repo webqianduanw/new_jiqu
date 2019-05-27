@@ -72,12 +72,19 @@ var flag = true,
 
 var url = window.reqUrl;
 var data=[];
-var itemId = getRequest()['itemId']||getRequest()['itemid']//获取某参数的对应参数值
-	userId = getRequest()['userId']||getRequest()['userid']
-	currentTime = getRequest()['currentTime']
+var itemId = getRequest()['itemId']||getRequest()['itemid'],//获取某参数的对应参数值
+	userId = getRequest()['userId']||getRequest()['userid'],
+	currentTime = getRequest()['currentTime'],
+	logtype = getRequest()["logtype"] || getRequest()["logtype"],
 	contentType = document.body.getAttribute('contenttype');
 
-
+// 从客户端拿userId
+//value = {userId:1,logtype:2}
+function getUserId(value) {
+	// mui.toast(JSON.stringify(value));
+	userId = value && value.userId || "";
+	logtype = value && value.logtype || "";
+}
 	// 更改加载背景图
 	var img = document.getElementsByTagName('img');
 		console.log(img);
@@ -527,6 +534,9 @@ mui.plusReady(
 
 	// 文章点赞收藏
 	hit.addEventListener('tap', function() {
+		if (logtype == "1") { //没有登录触发登录
+			window.JanesiBridge.callNative("praise");
+		} else {
 		var num = parseInt(this.children[2].innerHTML);
 		var that=this;
 		if(flag) {
@@ -584,10 +594,13 @@ mui.plusReady(
 			});
 
 		}
-
+	}
 	}),
 	collect.addEventListener('tap', function() {
 		var that = this;
+		if (logtype == "1") { //没有登录触发登录
+			window.JanesiBridge.callNative("collection");
+		} else {
 		if(flag1) {
 			mui.ajax(url + '/app/interest/collection/collect', {
 				type: 'post',
@@ -640,7 +653,7 @@ mui.plusReady(
 			})
 
 		}
-
+	}
 	}),
 
 	//查看原文链接

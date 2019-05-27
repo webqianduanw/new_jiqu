@@ -90,15 +90,16 @@
 		window.JanesiApi.sendApi(signApi, 'post', {
 			// userId:'1336'
 		}, function (res) {
+			alert(JSON.stringify(res))
 			console.log(res);
 			if (res.code == '0') {
 				if (res.result.isSign == '1') {//1已签到，更换签到按钮
 					$('.signBtn').html('签到收益')
-					$('.signBtn').css({ 'backgroundColor': '#fff', 'border': '1px solid #FD4844', 'color': '#FD4844' })
+					$('.signBtn').css({ 'backgroundColor': '#ffffff', 'border': '1px solid #FFD700', 'color': '#333333' })
 
 				} else {
 					$('.signBtn').html('签到')
-					$('.signBtn').css({ 'backgroundColor': '#FD4844', 'border': 'none', 'color': '#fff' })
+					$('.signBtn').css({ 'backgroundColor': '#FFD700', 'border': 'none', 'color': '#333333' })
 				}
 				//签到进度条
 				for (var i = 0; i < res.result.signDays; i++) {
@@ -114,7 +115,7 @@
 					}
 					$('.changeLine').css('width', '0%');
 				} else if (res.result.signDays > '0' && res.result.signDays < '7') {
-					$('.changeLine').css('width', (res.result.signDays - 1) * 16 + 10 + '%');
+					$('.changeLine').css('width', (res.result.signDays - 1) * 15 + 15 + '%');
 				} else {
 					$('.changeLine').css('width', '100%');
 					$('.gift').addClass('sevenGift');
@@ -128,7 +129,8 @@
 				// 		$('.line div:nth-of-type(7)').removeClass('signed')
 				//    }
 			}
-		})
+
+	})
 	}
 
 	//点击签到进度条位置，弹框弹出和关闭
@@ -189,15 +191,9 @@
 
 		}
 	}
-	// window.onload = function () {
-	//     // 全局定义请求地址
-	//     window.JanesiApi.reqUrl = requestUrl;
-	//     console.log(window.JanesiApi.reqUrl)
-	//     reloadData();
-
-	// }
-
-	reloadData();
+	window.onload = function () {
+		reloadData();
+	}
 	window.JanesiBridge.commonNativeCallJS = function (res) {
 		if (res.action == 'reloadData') {
 			reloadData();
@@ -208,14 +204,14 @@
 
 	// 给原生的参数
 	var linkPupil1 = {
-		'url': urlBase + '/janesi-headline/ZQFL/templete/teachersdisciple.html',
+		'url': urlBase + '/janesi-headline/ZQFL/templete/teacherAndPupil.html',
 		'data': {
 			'address': 'teacher',
 			'from': 'banner'
 		}
 	}
 	var linkPupil2 = {
-		'url': urlBase + '/janesi-headline/ZQFL/templete/teachersdisciple.html',
+		'url': urlBase + '/janesi-headline/ZQFL/templete/teacherAndPupil.html',
 		'data': {
 			'address': 'teacher',
 			'from': 'task'
@@ -345,13 +341,13 @@
 			var temp = ` <div class="sectionHeaderBG"  onclick="collapseAllAction(this)">
 
             <div class="sectionTitleBG">
-                <img class="sectionLeftIcom" src="../icon/welfare_daily_person@2x.png">
                 <p class="sectionLeftTitle">新手任务</p>
             </div>
         </div>`
 			noobSection.innerHTML = temp;
 			noobSection.appendChild(ul);
-		})
+
+	})
 	}
 	// 日常任务
 	function fetchDailyData() {
@@ -364,7 +360,6 @@
 			var headerSectionTemplate = `
             <div class="sectionHeaderBG" onclick="collapseAllAction(this)">
             <div class="sectionTitleBG">
-            <img class="sectionLeftIcom" src="../icon/welfare_daily_task@2x.png">
             <p class="sectionLeftTitle">${res.result.content}</p>
             </div>
             </div>
@@ -387,7 +382,8 @@
 			lastHideDiv.classList.add('hideLine');
 			dailyTaskSection.innerHTML = headerSectionTemplate;
 			dailyTaskSection.appendChild(ul);
-		})
+
+	})
 	}
 	// 点击签到
 	function clickSignAction() {
@@ -482,6 +478,10 @@
 				'page': 'homePage'
 			});
 
+		} else if (keyName == '阅读时长60分钟') {
+		window.JanesiBridge.callNative('open', {
+			'page': 'homePage'
+		});
 
 		} else if (keyName == '观看视频') {
 			window.JanesiBridge.callNative('open', {
@@ -534,9 +534,39 @@
 
 	//原生触发 刷新请求
 	function reloadData() {
+		// alert(1)
+		// alert(JSON.stringify(nativePublicData))
 		fetchDailyData();
 		fetchNewbieData();
 		signProgress();
+		setTimeout(() => {
+			var len = $(".collapseSectionBG").length;
+			for(var i=0;i<10;i++){
+				if($(".collapseSectionBG").eq(i).attr("id")=="新手阅读奖励"){
+					$(".collapseSectionBG").eq(i).find(".noobSectionCircle").addClass("circle1")
+				}else if($(".collapseSectionBG").eq(i).attr("id") == "输入邀请码"){
+					$(".collapseSectionBG").eq(i).find(".noobSectionCircle").addClass("circle2")
+				} else if ($(".collapseSectionBG").eq(i).attr("id") == "绑定微信号") {
+					$(".collapseSectionBG").eq(i).find(".noobSectionCircle").addClass("circle3")
+				} else if ($(".collapseSectionBG").eq(i).attr("id") == "邀请收徒，现金可提现") {
+					$(".collapseSectionBG").eq(i).find(".noobSectionCircle").addClass("circle4")
+				} else if ($(".collapseSectionBG").eq(i).attr("id") == "阅读资讯") {
+					$(".collapseSectionBG").eq(i).find(".noobSectionCircle").addClass("circle5")
+				} else if ($(".collapseSectionBG").eq(i).attr("id") == "分享资讯") {
+					$(".collapseSectionBG").eq(i).find(".noobSectionCircle").addClass("circle6")
+				} else if ($(".collapseSectionBG").eq(i).attr("id") == "阅读时长60分钟") {
+					$(".collapseSectionBG").eq(i).find(".noobSectionCircle").addClass("circle7")
+				} else if ($(".collapseSectionBG").eq(i).attr("id") == "观看视频") {
+					$(".collapseSectionBG").eq(i).find(".noobSectionCircle").addClass("circle8")
+				} else if ($(".collapseSectionBG").eq(i).attr("id") == "阅读推送资讯") {
+					$(".collapseSectionBG").eq(i).find(".noobSectionCircle").addClass("circle9")
+				} else if ($(".collapseSectionBG").eq(i).attr("id") == "问卷调查") {
+					$(".collapseSectionBG").eq(i).find(".noobSectionCircle").addClass("circle10")
+				}
+
+			}
+		}, 500);
+
 	}
 
 
@@ -605,7 +635,7 @@
                     </div>`
 		li.innerHTML = rowTemplate;
 	}
-
+	// }
 </script>
 
 </html>

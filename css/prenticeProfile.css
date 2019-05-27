@@ -96,13 +96,18 @@ body {
 .header {
     background-color: #fff;
     width: 10rem;
-    height: 5.2rem;
+    height: 5.44rem;
+    position: relative;
+    /*margin-bottom: 1.7067rem;*/
 }
 
 .headerBG {
-    background-color: #FF4D32;
+    background: -webkit-linear-gradient(322deg, rgba(255,95,50,1) 0%, rgba(255,144,74,1) 100%);
+    background: -moz-linear-gradient(322deg, rgba(255,95,50,1) 0%, rgba(255,144,74,1) 100%);
+    background: -o-linear-gradient(322deg, rgba(255,95,50,1) 0%, rgba(255,144,74,1) 100%);
+    background: linear-gradient(322deg, rgba(255,95,50,1) 0%, rgba(255,144,74,1) 100%);
     width: 10rem;
-    height: 2.933333rem;
+    height: 3.7334rem;
     position: relative;
 }
 
@@ -118,21 +123,22 @@ body {
 .headerBG .coin {
     color: #fff;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    top: 0.4054rem;
+    left: 0;
+    right: 0;
 }
 
 .headerBG .coin .additional {
-    font-size: 14px;
+    font-size: 0.4266rem;
     text-align: center;
     color: #fff;
     margin-bottom: 0;
 }
 
 .headerBG .coin .jiahao {
-    font-family: PingFangSC-Regular;
-    font-size: 24px;
+    font-family: DIN-Medium;
+    font-weight: 500;
+    font-size: .8rem;
     color: #FFFFFF;
     letter-spacing: -0.87px;
     text-align: center;
@@ -146,10 +152,26 @@ body {
     text-align: center;
     line-height: 33px;
 }
-
+.headFooter1{
+	width: 8.6666rem;
+	height: 2.5066rem;
+	position: absolute;
+	top: 2.9333rem;
+	left: 0.6666rem;
+	background: url(../icon/shituShadow.png) no-repeat;
+	background-size: 100% 100%;
+	z-index: 1;
+}
 .headFooter {
-    height: 2rem;
-    width: 10rem;
+    height: 2.35rem;
+    width: 9.2rem;
+    border-radius: 0.25rem;
+    background: #ffffff;
+    position: absolute;
+    top: 2.7027rem;
+    left: 0.4054rem;
+    z-index: 2;
+    	display:flex;
 }
 
 .headFooter .footer {
@@ -171,11 +193,12 @@ body {
 }
 
 .headFooter .footer .count {
-    font-size: 18px;
+    font-size: .64rem;
     text-align: center;
-    color: #333333;
+   	color:rgba(34,34,34,1);
     margin-bottom: 0;
-    font-family: PingFangSC-Regular;
+    font-family: DIN-Medium;
+    font-weight:500;
 }
 
 .headFooter .footer .additional {
@@ -184,10 +207,6 @@ body {
     color: #AAAAAA;
     margin-bottom: 0;
     font-family: PingFangSC-Regular;
-}
-
-.headFooter .todayGrow {
-    float: left;
 }
 
 .headFooter .sumGrow {
@@ -209,7 +228,7 @@ body {
 
 /* 今日收徒 累计收徒 累计金币 的线  样式 */
 
-.headFooter .sumGrow::before {
+/*.headFooter .sumGrow::before {
     position: absolute;
     display: block;
     content: "";
@@ -220,9 +239,9 @@ body {
     left: 1px;
     top: 50%;
     margin-top: -0.35rem;
-}
+}*/
 
-.headFooter .sumCoin::before {
+/*.headFooter .sumCoin::before {
     display: block;
     position: absolute;
     content: "";
@@ -233,12 +252,15 @@ body {
     left: 1px;
     top: 50%;
     margin-top: -0.35rem;
-}
+}*/
 
 .mui-scroll-wrapper .mui-scroll {
     position: relative !important;
 }
-
+.mui-scroll-wrapper .mui-scroll  .mui-table-view{
+	height: 10.9333rem !important;
+	overflow-y: scroll;
+}
 .mui-scroll-wrapper {
     position: relative !important;
 }
@@ -342,6 +364,7 @@ p_wrapper.mui-control-content .mui-loading {
     background-color: #fff;
     text-align: center;
     margin-left: 0.506667rem;
+    color: rgba(153,153,153,1);
 }
 
 /* row p order 排序默认前三样式  */
@@ -417,7 +440,6 @@ p_wrapper.mui-control-content .mui-loading {
     color: #FD4844;
     font-size: 14px;
 }
-
 /* 累计贡献 数字 */
 
 .mui-table-view .row .sumGrow .sumCount .count {
@@ -426,6 +448,16 @@ p_wrapper.mui-control-content .mui-loading {
     font-size: 16px;
     color: #FD4844;
     letter-spacing: 0;
+    position: relative;
+}
+.mui-table-view .row .sumGrow .sumCount .count:before{
+	position: absolute;
+	content: "";
+	width: 0.4054rem;
+	height: 0.4054rem;
+	background: url(../icon/coinIcon@2x.png) no-repeat;
+	background-size: 100% 100%;
+	left: -0.4864rem;
 }
 
 /* 累计贡献 row下部的线  */
@@ -443,24 +475,24 @@ p_wrapper.mui-control-content .mui-loading {
     display: flex;
     height: 100%;
     flex-direction: column;
-    justify-content: center;
+    /*justify-content: center;*/
     align-items: center;
 }
 
 .mui-table-view .empty .emptyBG {
     background-image: url(../icon/welfare_apprentice_person_none@2x.png);
-    background-size: 2.69rem 2.69rem;
-    width: 2.69rem;
-    height: 2.69rem;
-    margin-top: 1.12rem;
-    margin-bottom: 0.4rem;
+    background-size: 100% 100%;
+    width: 2.2134rem;
+    height: 2.6133rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
 }
 
 .mui-table-view .empty .ranking {
     background-image: url(../icon/welfare_apprentice_prize_none@2x.png);
-    background-size: 2.69rem 2.69rem;
-    width: 2.69rem;
-    height: 2.69rem;
+    background-size: 100% 100%;
+    width: 2.2134rem;
+    height: 2.6133rem;
 }
 
 .mui-table-view .empty .emptyTopString {
@@ -472,7 +504,22 @@ p_wrapper.mui-control-content .mui-loading {
     color: #999999;
     font-size: 14px;
 }
-
+.mui-table-view .empty .goApprentice{
+	width: 6.9333rem;
+	height: 1.0666rem;
+	background: -webkit-linear-gradient(135deg, rgba(255,223,93,1) 0%, rgba(255,204,0,1) 100%);
+	background: -moz-linear-gradient(135deg, rgba(255,223,93,1) 0%, rgba(255,204,0,1) 100%);
+	background: -o-linear-gradient(135deg, rgba(255,223,93,1) 0%, rgba(255,204,0,1) 100%);
+	background: linear-gradient(135deg, rgba(255,223,93,1) 0%, rgba(255,204,0,1) 100%);
+    border-radius: 0.5333rem;
+    line-height:1.0666rem;
+    text-align: center;
+	font-size:0.3733rem;
+	font-family:PingFangSC-Medium;
+	font-weight:500;
+	color:rgba(34,34,34,1);
+	margin-top: .5rem;
+}
 .mui-table-view .empty .emptyRigString {
     color: #FF4D32;
     font-size: 14px;
@@ -483,9 +530,10 @@ p_wrapper.mui-control-content .mui-loading {
 }
 
 .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
-    font-family: PingFangSC-Regular;
+    font-family: PingFangSC-Medium;
+     font-weight: 500;
     font-size: 16px;
-    color: #333333 !important;
+    color: #222222 !important;
     letter-spacing: -0.87px;
     text-decoration: none;
     line-height: 1.4rem;
@@ -520,27 +568,33 @@ p_wrapper.mui-control-content .mui-loading {
 
 @keyframes moveRight {
     0% {
-        left: 22%;
+        left: 20%;
     }
     100% {
-        left: 73%;
+        left: 71%;
     }
 }
 
 @keyframes moveLeft {
     0% {
-        left: 73%;
+        left: 71%;
     }
     100% {
-        left: 22%;
+        left: 20%;
     }
 }
-
+.mui-content{
+	background: #ffffff;
+}
 .mui-slider .mui-slider-progress-bar1 .sliderLine {
     position: absolute;
-    background-color: #FF3D04;
-    width: 20px;
-    height: 2px;
-    left: 22%;
+    width:0.8648rem;
+	height:0.081rem;
+	background:-webkit-linear-gradient(135deg, rgba(255,223,93,1) 0%, rgba(255,204,0,1) 100%);
+	background:-moz-linear-gradient(135deg, rgba(255,223,93,1) 0%, rgba(255,204,0,1) 100%);
+	background:-o-linear-gradient(135deg, rgba(255,223,93,1) 0%, rgba(255,204,0,1) 100%);
+	background:linear-gradient(135deg, rgba(255,223,93,1) 0%, rgba(255,204,0,1) 100%);
+	border-radius:2px;
+    left: 20% !important;
     bottom: 0px;
 }

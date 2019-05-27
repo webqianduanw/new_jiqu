@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="../css/mui.min.css" rel="stylesheet" />
     <link href="../css/bindInviteCode.css" rel="stylesheet" />
-    
+
     <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
     <title>邀请码</title>
 </head>
@@ -20,7 +20,7 @@
 
             <div class="codeTitle"><p class="codeTp"> &nbsp;绑定的邀请码&nbsp; </p></div>
             <div class="codebg" id="k_code">
-                
+
             </div>
         </div>
     </div>
@@ -42,19 +42,19 @@ window.onload = function(){
 
     // 获取邀请码
     var reqApi = '/api/ucs/user/invite_code';
-    window.JanesiApi.sendApi(reqApi, 'post', reqParams, function (res) {
+   window.JanesiApi.sendApi(reqApi, 'post', reqParams, function (res) {
         if (res.code == 0) {
 
             var k_codeBg = document.getElementById("k_code");
             k_codeBg.innerHTML = res.result;
         }
-    })
+})
 }
 
 
 
 
-    
+
 </script>
 
 </html>

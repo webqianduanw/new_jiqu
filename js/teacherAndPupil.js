@@ -52,9 +52,9 @@ window.onload = function () {
 // 获取钱包数
 function getPacket(){
     var reqApi = '/app/interest/task/packet_num';
-    window.JanesiApi.sendApi(reqApi, 'post',{
-        'appId':appId,
-        'userId':userId
+    window.JanesiApi.sendApi(reqApi, 'post', {
+        // 'appId': appId,
+        // 'userId': userId
     }, function (e) {
         var res = e.result;
         console.log(e);
@@ -78,7 +78,8 @@ function getPacket(){
 
 
         }
-    })
+
+})
 }
 //本身没有红包   点击去赚钱  分享  alert_noneBag
     var btnLess = document.querySelector('.activity_btnLess');
@@ -100,7 +101,7 @@ function getPacket(){
 // 有红包  点击领取   alert_active
     function btnMore() {
         var reqApi = '/app/interest/task/get_packet';
-        window.JanesiApi.sendApi(reqApi, 'post',reqParams, function (e) {
+        window.JanesiApi.sendApi(reqApi, 'post', reqParams, function (e) {
             console.log(e);
             var res = e.result;
             $('html,body').addClass('scrollbox'); //使网页不可滚动
@@ -122,7 +123,8 @@ function getPacket(){
             }
             document.querySelector('.getMoey').innerHTML = res.money;
             document.querySelector('.numberBags').innerHTML = res.num;
-        })
+
+    })
         $('#alert_active').css('display', 'block');
         getPacket();
     }
@@ -147,7 +149,7 @@ function getPacket(){
         var display = $('#share').css('display');
 
         if (display == 'block') {
-            getPacket();
+            // getPacket();
            $('#alert_active').css('display', 'none')
             $('html,body').removeClass('scrollbox'); //使网页恢复可滚动
 
@@ -180,10 +182,11 @@ function getPacket(){
 // 提现金额
 function getWallet(){
      var reqApi = '/app/interest/user_wallet/summary';
-     window.JanesiApi.sendApi(reqApi, 'post', reqParams, function (e) {
+    window.JanesiApi.sendApi(reqApi, 'post', reqParams, function (e) {
          // console.log(e)
          document.querySelector('#eightNum1').innerHTML = e.result.balance;
-     })
+
+    })
  }
  // 排行榜 列表
  function getRanking() {
@@ -218,7 +221,8 @@ function getWallet(){
          if (e.code == 0) {
              $('#showTip').css('display', 'block')
          }
-     })
+
+    })
  }
 
  // 获得邀请码 .inviteNum.innerHTML 获取今日收徒人数 .plusPeople  获取今日徒弟贡献  .plusNumber
@@ -227,7 +231,8 @@ function getWallet(){
      window.JanesiApi.sendApi(reqApi, 'post', reqParams, function (e) {
         //  console.log(e);
          document.querySelector('.inviteNum').innerHTML = e.result.inviteCode;
-     })
+
+    })
  }
 
 

@@ -35,7 +35,7 @@ var pageY1,pageY2;
 
 //文章滚动到底部
 $(window).scroll(function () {
-	//  window.JanesiBridge.callNative('scrollNumbers','ok');
+	//  window..callNative('scrollNumbers','ok');
 
 	var listTop = parseInt(document.getElementById('list').offsetTop) - 600;
 	var scrollTop = document.body.scrollTop | document.documentElement.scrollTop;
@@ -92,15 +92,18 @@ var flag = true,
 var url = window.reqUrl;
 
 var data=[];
-var itemId = getRequest()['itemId']||getRequest()['itemid'],//获取某参数的对应参数值
-	userId = getRequest()['userId']||getRequest()['userid'],
-	currentTime = getRequest()['currentTime'],
-	contentType = document.body.getAttribute('contenttype');
+var itemId = getRequest()["itemId"] || getRequest()["itemid"], //获取某参数的对应参数值
+  userId = getRequest()["userId"] || getRequest()["userid"],
+	logtype = getRequest()["logtype"] || getRequest()["logtype"],
+  currentTime = getRequest()["currentTime"],
+  contentType = document.body.getAttribute("contenttype");
 // 从客户端拿userId
+//value = {userId:1,logtype:2}
 	function getUserId(value){
-		userId=value;
+		// mui.toast(JSON.stringify(value));
+		userId = value && value.userId || "";
+		logtype = value && value.logtype || "";
 	}
-
 	//详情内容收缩
 if(contentType=='ARTICLE'){
 	 document.querySelector('.au_read>.iconfont').innerHTML='阅读'
@@ -564,7 +567,9 @@ mui.plusReady(
 
 	// 文章点赞收藏
 	hit.addEventListener('tap', function() {
-		window.JanesiBridge.callNative("praise");
+		if (logtype=="1"){ //没有登录触发登录
+			window.JanesiBridge.callNative("praise");
+		}else{
 		var num = parseInt(this.children[2].innerHTML);
 		var that=this;
 		if(flag) {
@@ -622,10 +627,12 @@ mui.plusReady(
 			});
 
 		}
-
+		}
 	}),
 	collect.addEventListener('tap', function() {
-		window.JanesiBridge.callNative("collection");
+		if (logtype == "1") {
+			window.JanesiBridge.callNative("collection");
+		} else {
 		var that = this;
 		if(flag1) {
 			mui.ajax(url + '/app/interest/collection/collect', {
@@ -679,7 +686,7 @@ mui.plusReady(
 			})
 
 		}
-
+	}
 	}),
 
 

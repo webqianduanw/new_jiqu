@@ -26,7 +26,7 @@
 				min-height: 16.37rem;
 				background-color: #FD4844;
 				padding: 0.6rem;
-				  display: none;  
+				  display: none;
 				 /* display: block;  */
 				box-sizing: border-box;
 
@@ -66,7 +66,7 @@
 				color: #333333;
 				letter-spacing: 0;
 				text-align: center;
-				
+
 			}
 			.coin_award{
 				position: absolute;
@@ -79,7 +79,7 @@
 				letter-spacing: 0;
 				text-align: center;
 				line-height: 22px;
-				
+
 			}
 			.coin_award_red{
 				font-family: PingFangSC-Semibold;
@@ -90,7 +90,7 @@
 				line-height: 22px;
 			}
 			.subBtn{
-				position: absolute; 
+				position: absolute;
 				top:11rem;
 				left:0.58rem;
 				width: 7.46rem;
@@ -106,25 +106,25 @@
 			.top_content img {
 				width: 10rem;
 			}
-			
+
 			.tipNum {
 				color: #333;
 				font-size: 21px;
 				text-align: center;
 				margin: 0.67rem 0 0.53rem 0;
 			}
-			
+
 			.content {
 				padding: 0 0.72rem 0 0.75rem;
 			}
-			
+
 			.question {
 				color: #333;
 				font-size: 16px;
 				font-family: PingFangSC-Semibold;
 				margin-bottom: 0.53rem;
 			}
-			
+
 			.firstQues1,
 			.firstQues2,
 			.firstQues3,
@@ -135,13 +135,13 @@
 				border-radius: 0.21rem;
 				margin-bottom: 0.27rem;
 			}
-			
+
 			.quesRadio+label {
 				font-size: 16px;
 				color: #333;
 				line-height: 1.25rem;
 			}
- 			
+
 			 .previous{
 				width:8.53rem;
 				border-radius: 0.75rem;
@@ -150,7 +150,7 @@
 				color: #4A90E2;
 				font-size: 14px;
 				/* background-color: #FD4844; */
-			}  
+			}
 			.block_blank{
 				width: 100%;
 				height: 1.06rem;
@@ -172,7 +172,7 @@
 			input[type="radio"] + label::before {
 				content: "\a0"; /*不换行空格*/
 				display: inline-block;
-				 vertical-align: middle; 
+				 vertical-align: middle;
 				width: 0.4rem;
 				height: 0.4rem;
 				margin-left: 0.53rem;
@@ -184,16 +184,16 @@
 			input[type="radio"]:checked + label::before {
 				content: '\a0';
 				display: inline-block;
-				 background: url('../icon/research_choose.png'); 
-				   background-size:0.43rem 0.43rem;    
+				 background: url('../icon/research_choose.png');
+				   background-size:0.43rem 0.43rem;
 				border: 1px solid #fd4844;
-				
+
 			}
 			input[type="radio"] {
 				position: absolute;
 				clip: rect(0, 0, 0, 0);
 			}
-			
+
 		</style>
 	</head>
 
@@ -209,32 +209,32 @@
 					马上收徒
 				</div>
 			 </div>
-			
-		</div> 
+
+		</div>
 		<!--弹框完结  -->
 		 <div class="top_content">
 			<img src="../icon/research_banner.png" alt="">
-		</div> 
+		</div>
 		<div class="content">
-			
+
 
 		</div>
 		<div class="btn">
-			
+
 			<div class="next">下一题</div>
 			<div class="previous">返回上一题>></div>
 			<div class="block_blank"></div>
 		</div>
-		
+
 
 	</body>
 	<script src="../js/jquery-2.1.1.min.js"></script>
 	<script src="../js/common.js"></script>
-	<script src="../js/JanesiBridges.js"></script> 
+	<script src="../js/JanesiBridges.js"></script>
 
-	
+
 	<script>
-		
+
 
 		var content = [
 			{
@@ -266,7 +266,7 @@
 			},
 			{
 				'number': '2/5',
-				'questionNum':'2',				
+				'questionNum':'2',
 				'title': '敢问英雄来自何方？',
 				'list': [
 					{
@@ -347,7 +347,7 @@
 			{
 				'number': '5/5',
 				'questionNum':'5',
-				'title': '您对于看点头条啥最不满意？',
+				'title': '您对于即趣啥最不满意？',
 				'list': [
 					{
 						'id': '16',
@@ -400,7 +400,7 @@
 			</div>
 		`;
 		return template
-		
+
 			}else {
 				var template=`
 			<p class="tipNum">${content.number}</p>
@@ -416,21 +416,21 @@
 			<div class="firstQues3 radioDiv">
 				<input type="radio" name="${content.list[2].name}" id="${content.list[2].id}" class="quesRadio" value="" />
 				<label for="mature">${content.list[2].answer}</label>
-			</div>		
+			</div>
 		`;
 		return template;
 		}
 			}
-		
 
-		 
-	
+
+
+
 	var questionId = ''
 	var answerId = ''
 		// 将id放入数组arr
 		var arr = [];
 		function getArr(value){
-			
+
 			var isContain = false;
 			var index = 0;
 			for (var i = 0; i < arr.length;i++){
@@ -451,7 +451,7 @@
 			}
  		}
 		// 将选项从arr中拿出 并设置选中状态
-		
+
 		function opptionStatus() {
 
 				for (var j = 0; j < arr.length; j++) {
@@ -474,10 +474,10 @@
 				getArr(obj);
 
 				var $radio = $(this).find("input[type=radio]"),
-			
+
 					$flag = $radio.is(":checked");
-					
-				
+
+
 				if (!$flag) {
 					$radio.prop("checked", true);
 					$('input[type=radio]').parent().css({'background':'#fff','borderColor':'#E0E0E0'});
@@ -507,11 +507,11 @@
 		}
 
 
-		
+
 		// 下一题
 		var next=document.querySelector('.next');
 		var i=0;
-		
+
 		next.onclick=function(){
 			for(var k =0;k<arr.length;k++){
 				if(arr[k].questionId==i+1){
@@ -525,7 +525,7 @@
 								document.querySelector('.content').innerHTML = template;
 								opptionRadio();
 								opptionStatus();
-							
+
 						}else {
 							return;
 						}
@@ -541,17 +541,17 @@
 							window.JanesiApi.sendApi(reqApi, 'post', {
 								// 'userId': userId,
 								'answer': arrString
-								
+
 							}, function (result) {
 								if(result.code==0){
 									$('.getCoin').css('display','block');
 								}
 							})
-						
+
 					}
 				}
 			}
-				
+
 		}
 		var teacherLink = {
 				'url': urlBase + '/janesi-headline/ZQFL/templete/teacherAndPupil.html'
@@ -580,9 +580,9 @@
 			}else{
 				return;
 			}
-			
+
 		}
-		
+
 	</script>
 
 </html>

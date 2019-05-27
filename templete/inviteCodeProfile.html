@@ -17,39 +17,37 @@
     <div class="i_container">
         <div class="I_wrapper">
             <div class="whatIsInviteCode">
-                <div class="img1Bg">
-                    <div class="img1StringBG">
+                <div class="top_yaoqing">
+                    <div class="img1Bg">
                         <p class="img1String">什么是邀请码？</p>
-                        <p class="img1String2">邀请码是 看点头条用户的身份标识,</p>
+                        <p class="img1String2">邀请码是 即趣用户的身份标识,</p>
                         <p class="img1String2">可在邀请收徒时使用</p>
                     </div>
-                    <img class="img1" src="../icon/code-bbg.png">
-                </div>
-                <div class="img2BGTemp">
-                    <div class="img2Bg" onclick="copyAction()">
-                        <div class="inviteCode">
-                            <img class="img2" src="../icon/code_click_bg.png">
-                            <div class="codeNum">
-                                <p id="k_codeNum"></p>
+                    <div class="img2BGTemp">
+                        <div class="img2Bg" onclick="copyAction()">
+                            <div class="inviteCode">
+                                <img class="img2" src="../icon/code_click_bg.png">
+                                <div class="codeNum">
+                                    <p id="k_codeNum"></p>
 
-                            </div>
-                            <div class="img2String">
-                                <p> &nbsp;点击复制您的邀请码&nbsp; </p>
+                                </div>
+                                <div class="img2String">
+                                    <p> &nbsp;点击复制您的邀请码&nbsp; </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="line"> </div>
+                <!-- <div class="line"> </div> -->
                 <div class="howToUseCode">
 
                     <p class="img1String second">邀请码怎么用？</p>
                     <div class="stringBg">
-                        <p class="img1String2">1.通过分享邀请链接给朋友在线注册，或面对面扫码注册时自动绑定您的邀请码，不需要徒弟手动输入。</p>
+                        <p class="img1String2">通过分享邀请链接给朋友在线注册，或面对面扫码注册时自动绑定您的邀请码，不需要徒弟手动输入。</p>
                     </div>
                     <img class="img3" src="../icon/pic_01.png">
                     <div class="stringBg">
-                        <p class="img1String2">2.若您的好友是通过手机应用商店搜索“看点头条”安装注册的，需登录后输入您的邀请码后才能成为您的徒弟。</p>
+                        <p class="img1String2">若您的好友是通过手机应用商店搜索“即趣”安装注册的，需登录后输入您的邀请码后才能成为您的徒弟。</p>
                     </div>
                     <img class="img4" src="../icon/pic_02.png">
 
@@ -130,14 +128,14 @@
 
             // 获取邀请码
             var reqApi = '/app/interest/invite/summary';
-            window.JanesiApi.sendApi(reqApi, 'post', reqParams, function (res) {
+                window.JanesiApi.sendApi(reqApi, 'post', reqParams, function (res) {
                 if (res.code == 0) {
 
                     var k_codeNum = document.getElementById('k_codeNum');
                     k_codeNum.innerText = res.result.inviteCode;
                 }
 
-            })
+        })
         }
 
     // 分享

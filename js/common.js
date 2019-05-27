@@ -45,31 +45,31 @@ window.getConfigFromApp = function (value){
     window.nativeApiData = obgOri;
     window.nativePublicData = {
 
-        apiVersion: obgOri && obgOri.apiVersion || "",
-        appVersion: obgOri && obgOri.appVersion || "",
-        apiTime: obgOri && obgOri.apiTime || "",
-        appId: obgOri && obgOri.appId || "",
-        udid: obgOri && obgOri.udid || "",
-        userId: obgOri && obgOri.userId || "",
-        osType: obgOri && obgOri.osType || "",
-        appKey: obgOri && obgOri.appKey || "",
-        signature: obgOri && obgOri.signature || "",
-        channelFrom: obgOri && obgOri.channelFrom || "",
+    //  apiVersion: obgOri && obgOri.apiVersion || "",
+    //  appVersion: obgOri && obgOri.appVersion || "",
+    //  apiTime: obgOri && obgOri.apiTime || "",
+    //  appId: obgOri && obgOri.appId || "",
+    //  udid: obgOri && obgOri.udid || "",
+    //  userId: obgOri && obgOri.userId || "",
+    //  osType: obgOri && obgOri.osType || "",
+    //  appKey: obgOri && obgOri.appKey || "",
+    //  signature: obgOri && obgOri.signature || "",
+    //  channelFrom: obgOri && obgOri.channelFrom || "",
 
-        // apiVersion: "2.3.2",
-        // appVersion: "2.3.0",
-        // apiTime: "20190426145014",
-        // appId: "10010",
-        // udid: "c844187d72b0ee6f",
-        // userId: "85",
-        // osType: "ANDROID",
-        // appKey: "android05100100820180323",
-        // signature: "ee3fd739349ea14b8226be63260e2ff110",
-        // channelFrom: "default"
+       apiVersion: "2.3.2",
+       appVersion: "2.3.0",
+       apiTime: "20190426145014",
+       appId: "10010",
+       udid: "c844187d72b0ee6f",
+       userId: "85",
+       osType: "ANDROID",
+       appKey: "android05100100820180323",
+       signature: "ee3fd739349ea14b8226be63260e2ff110",
+       channelFrom: "default"
     };
     //  window.configCallBack();
 };
-// getConfigFromApp();
+   getConfigFromApp();
 //url地址解析
 window.urlAnalytical = function () {
     var urlObj = {};

@@ -23,13 +23,14 @@
 
 	<body>
 		<div id="app">
+			<div class="welfare_bg">
 			<div class="signDetail">
 				<div class="signRecord" @click="showRecord()">
-					<img src="../img/icon_signed_record.png" alt="" />
+					<!-- <img src="../img/icon_signed_record.png" alt="" /> -->
 					<span>签到记录</span>
 				</div>
 				<div class="signRule" @click="showRule()">
-					<img src="../img/icon_signed_rule@2x.png" alt="" />
+					<!-- <img src="../img/icon_signed_rule@2x.png" alt="" /> -->
 					<span>签到规则</span>
 				</div>
 			</div>
@@ -41,28 +42,15 @@
 					</div>
 					<div class="signIntro" v-else>
 						<div class="signDays">
-							连续签到第<span>{{totalDay}}</span>天
+							我的金币
 						</div>
 						<div class="signCoin">
-							<span>{{totalCoin}}</span><span>金币</span>
-							<div class="realize" @click="goGetCoin()">
-								去兑现 >
-							</div>
+							<span>{{totalCoin}}</span>
+							<span class="singGo" @click="goGetCoin()">去兑现 ></span>
 						</div>
-					</div>
-
-					<!--分享按钮-->
-					<div class="signGoShare" v-if="signState=='0'" @click="newsFirstGetCoinBtn()">
-						分享后领签到红包
-					</div>
-					<div class="signShare" v-else-if="signState=='1'" @click="shareGetSecondBtn()">
-						分享拆第2份红包奖励
-					</div>
-					<div class="signShare" v-else-if="signState=='2'" @click="shareGetMoreBtn()">
-						分享再拆一份红包奖励
-					</div>
-					<div class="signFinish" v-else-if="signState=='3'">
-						今日已签到，明日还可以领红包
+						<div class="singCont">
+							<span>已连续签到第{{totalDay}}天</span>
+						</div>
 					</div>
 
 					<div class="userWealth" v-show="wealthShow">
@@ -72,6 +60,7 @@
 						</span>
 					</div>
 				</div>
+			</div>
 			</div>
 			<div class="signBottom" @click="showCoin()">
 				<div class="line">
@@ -84,6 +73,21 @@
 					<div class="circle" :class="{signed:isSign>='6'}"></div>
 					<div class="circle"></div>
 					<i class="gift" :class="{sevenGift:isSeven}"></i>
+				</div>
+			</div>
+			<!--分享按钮-->
+			<div class="share_btn">
+				<div class="signGoShare" v-if="signState=='0'" @click="newsFirstGetCoinBtn()">
+					分享后领签到红包
+				</div>
+				<div class="signShare" v-else-if="signState=='1'" @click="shareGetSecondBtn()">
+					分享拆第2份红包奖励
+				</div>
+				<div class="signShare" v-else-if="signState=='2'" @click="shareGetMoreBtn()">
+					分享再拆一份红包奖励
+				</div>
+				<div class="signFinish" v-else-if="signState=='3'">
+					今日已签到，明日还可以领红包
 				</div>
 			</div>
 			<div class="placeHolder"></div>
@@ -133,7 +137,7 @@
 							<li> 每天分享的机会不同，请大家每天及时签到及时分享，以免损失收益</li>
 							<li> 达到一定数量的金币，可以进行兑换，兑换后才可以到账并提现</li>
 							<li> 连续签到7天更有现金红包奖励</li>
-							<li> 如发现任何作弊行为，看点头条有权取消用户已获得的奖励</li>
+							<li> 如发现任何作弊行为，即趣有权取消用户已获得的奖励</li>
 						</ul>
 					</div>
 
@@ -149,7 +153,7 @@
 					</div>
 					<div class="ulScroll2">
 						<ul class="recordList">
-							
+
 						</ul>
 					</div>
 					<div class="noMoreData" v-show="noMoreShow">暂无更多数据</div>
@@ -178,7 +182,7 @@
 						<div class="share_bg_content"></div>
 						<p>恭喜你，成功领取</p>
 						<p><span class="plus">+</span>
-							<span class="additionNums" id="box">{{othersGet.coins}}</span> 金币
+							<span class="additionNums" id="box">{{othersGet.coins}}</span>
 						</p>
 						<div class="shareSecond" @click="shareSecond()" :class="{btnColor:isChange}">
 							{{othersGet.btnType}}
@@ -192,7 +196,7 @@
 				<div class="firstShareTip" v-show="firstShareTip">
 					<div class="shareText">
 						<p>分享到{{shareText.come}}后</p>
-						<p>返回看点头条领取红包</p>
+						<p>返回即趣领取红包</p>
 					</div>
 					<div class="shareIcon">
 						<p>分享到</p>
@@ -241,7 +245,7 @@ var vm = new Vue({
         wealthShow:false,
 		signFirst_mask: false,//未签到 分享领取金币的红包
 		newShareFirst: false,//三种弹框合并
-		// 分享按钮页 
+		// 分享按钮页
 		shareButton: false,
 		firstShareTip: false, //第一次分享
 		nextShareTip: false, // 再次分享
@@ -306,7 +310,7 @@ var vm = new Vue({
         },
         closeRecord(){
             this.getRecordShow = !this.getRecordShow
-            document.querySelector('.recordList').innerHTML='';  
+            document.querySelector('.recordList').innerHTML='';
         },
 		//签到规则的弹窗
 		showRule() {
@@ -332,7 +336,7 @@ var vm = new Vue({
 			let that = this;
 			var signApi = '/api/ucs/sign/user_sign';
 			window.JanesiApi.sendApi(signApi, 'post', {
-				userId: '546300'
+				// userId: '546300'
 			}, function (res) {
                 console.log(res)
 				that.signLine(res);//进度条的渲染
@@ -373,26 +377,29 @@ var vm = new Vue({
 						// that.totalCoin = e.coins
 					}
 				}
+
 			})
 		},
-		
+
 		//签到进度圆圈和线的状态变化
 		//10 26 42 58 74 90 100
 		signLine(res) {
             if(res.result.signDays){
-                this.changeWidth = (res.result.signDays - 1) * 16 + 10 + '%'
+                this.changeWidth = (res.result.signDays - 1) * 15 + 15 + '%'
 			    this.isSign = res.result.signDays
 			    if (res.result.signDays == '7') {
 				    this.isSeven = true;
 			    }
             }
 		},
-		
+
 		//获取签到记录（弹框）
 		getRecordList() {
 			// window.JanesiApi.reqUrl = requestUrl
 			let that = this;
 			var reqApi = '/api/ucs/sign/sign_flow';
+			// nativePublicData.pageNo = that.pageNo;
+			// nativePublicData.pageSize = that.pageSize;
 			window.JanesiApi.sendApi(reqApi, 'post', {
 				// 'userId': '1478',
 				'pageNo': that.pageNo,
@@ -422,16 +429,19 @@ var vm = new Vue({
 					that.pageNo = String(parseInt(that.pageNo) + 1);
 					that.time();
 				}
+
 			})
+
 		},
 
 		//获取用户兑换金币的数据，并且动态以动画的形式的输出（走马灯）
 		getUserList() {
 			let that = this;
 			let reqApi = '/app/interest/coin/coin_record';
+			nativePublicData.detail = '金币兑换'
 			window.JanesiApi.sendApi(reqApi, 'post', {
 				'detail': '金币兑换',
-			}, function(res) {
+			}, function (res) {
 				console.log(res)
 				if(res.result.length!=='0'){
 					that.wealthShow=true;
@@ -441,7 +451,7 @@ var vm = new Vue({
 						that.changeUser(that.i, that.wealth)
 					}, 2000)
 				}
-				
+
 
 			})
 		},
@@ -495,7 +505,7 @@ var vm = new Vue({
             that.randomShow()
         },
         shareGetMoreBtn(){
-            let that=this;            
+            let that=this;
             that.newShareFirst = false //拆第二 再拆 完  三种弹框
             that.shareButton = true  //分享引导页
 			that.firstShareTip = false
@@ -551,7 +561,7 @@ var vm = new Vue({
                 },function (res){
 					console.log(res)
 					that.shareButton = false
-					
+
 					if (res.state == '1') {
 						that.successShare()
 					}
@@ -620,7 +630,7 @@ var vm = new Vue({
 					that.othersGet.coins = e.preCoins
 					setTimeout(() => {
 						that.runNum(e.preCoins, result.result.$fb_coins)
-						that.othersGet.coins = result.result.$fb_coins					
+						that.othersGet.coins = result.result.$fb_coins
 					}, 1000)
                 }
             })
@@ -635,10 +645,10 @@ var vm = new Vue({
 		// 弹框金币动画
 		runNum(start, end) {
             var options = {
-                useEasing: true, 
-                useGrouping: true, 
-                separator: ',', 
-                decimal: '.', 
+                useEasing: true,
+                useGrouping: true,
+                separator: ',',
+                decimal: '.',
             }
             var demo = new CountUp('box', start, end, 0, 1.5, options);
             if (!demo.error) {
@@ -647,7 +657,7 @@ var vm = new Vue({
                 console.error(demo.error);
             }
         }
-		
+
 
 	}
 })
