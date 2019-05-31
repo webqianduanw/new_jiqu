@@ -171,7 +171,12 @@ function nativeCallBack(callId, action, result) {
 }
 
 function nativeCallJS(params) {
-	var res = JSON.parse(params);
-	alert(JSON.stringify(res));
-	window.JanesiBridge.commonNativeCallJS(res);
+	let obgOri ;
+	if (typeof params == "string") {
+		obgOri = JSON.parse(params);
+	} else {
+		obgOri = params;
+	}
+	// alert(JSON.stringify(obgOri));
+	window.JanesiBridge.commonNativeCallJS(obgOri);
 }
